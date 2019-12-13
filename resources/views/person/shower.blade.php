@@ -29,18 +29,22 @@
     </table>
 </div>
 
+
 </body>
 
-
-
 <script type="text/javascript">
+    console.log("/imggetter/" + window.location.pathname.split('/')[2]);
+    function reply_click(clicked_id)
+    {
+        alert(clicked_id);
+    } ;
     $(function () {
 
         var table = $('.data-table').DataTable({
 
             processing: true,
             serverSide: true,
-            ajax: "{{ route('img.imgGetter',['id'=> 1])}}",
+            ajax: "/imggetter/" + window.location.pathname.split('/')[2],
 
             columns: [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex'},

@@ -20,16 +20,17 @@
                         <section style="margin-bottom: 50px">
                             <form action="{{ url('/uploadimg') }}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                Book title:
+                                Title:
                                 <br />
-                                <input type="text" name="name" />
+                                <input type="text" name="name" class="form-control" />
                                 <br /><br />
-                                <input type="text" name="id" />
-                                Logo:
+                                Employee ID:
+                                <input type="text" name="id"  class="form-control" />
+
                                 <br />
                                 <input type="file" name="image" />
                                 <br /><br />
-                                <input type="submit" value=" Save " />
+                                <input type="submit" value=" Save " class="btn btn-primary" />
                             </form>
 
                         </section>

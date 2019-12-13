@@ -35,7 +35,7 @@ class UserController extends Controller
         return view('main');
     }
 
-    public function imgGetter(Request $request,$id )
+    public function imgGetter(Request $request,$id)
     {
         if ($request->ajax()) {
             //$data = Empimg::all();
@@ -45,7 +45,7 @@ class UserController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
 
-                    $btn = '<a href="/imgshow" class="edit btn btn-primary btn-sm" id="'.$row->id.'"> View</a>';
+                    $btn = '<a href="/imgshow" class="edit btn btn-primary btn-sm" id="'.$row->id.'" onClick="reply_click(this.id)" > View</a>';
 
                     return $btn;
                 })

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Empimg;
 use Illuminate\Http\Request;
 use Image;
+use Illuminate\Support\Facades\Response;
 
 class ImgController extends Controller
 {
@@ -12,26 +13,38 @@ class ImgController extends Controller
     {
         if($request->isMethod('post'))
         {
-            $newImg = new Empimg();
-            $newImg->name = $request->input('name');
-            $file = $request->file('image');
-             // $tmpName  = $_FILES['image']['tmp_name'];
+            $data = new Empimg();
 
-                //$fp = fopen($tmpName, 'rb'); // read binary
+            $url = $request["image"]->store("public");
+            $data["doc"] = str_replace("public", "/storage", $url);
 
-            //$newImg->doc = Image::make(base64_encode($_FILES["image"]["tmp_name"])->save();
-            //$newImg->doc = $data;
+            $data["name"] = $request["name"];
+            $data["emp_id"] = $request["id"];
 
-            //$newImg->doc = Image::make( addslashes(file_get_contents($_FILES["image"]["tmp_name"])));
-            //$newImg->doc = ($request->getContent($file));
-            $path = $file->path();
-            $name = $file->getClientOriginalName();
-            $fullpath =$path .'\\'.$name;
-            $t = file_get_contents($_FILES['image']['tmp_name']);
-            $request->file('image')->store('uploads');
-            $newImg->doc = $t;
-            $newImg->emp_id = $request->input('id');
-            $newImg->save();
+            $data->save();
+
+
+
+//            $newImg = new Empimg();
+//            $newImg->name = $request->input('name');
+//            $file = $request->file('image');
+//             // $tmpName  = $_FILES['image']['tmp_name'];
+//
+//                //$fp = fopen($tmpName, 'rb'); // read binary
+//
+//            //$newImg->doc = Image::make(base64_encode($_FILES["image"]["tmp_name"])->save();
+//            //$newImg->doc = $data;
+//
+//            //$newImg->doc = Image::make( addslashes(file_get_contents($_FILES["image"]["tmp_name"])));
+//            //$newImg->doc = ($request->getContent($file));
+//            $path = $file->path();
+//            $name = $file->getClientOriginalName();
+//            $fullpath =$path .'\\'.$name;
+//            $t = file_get_contents($_FILES['image']['tmp_name']);
+//            $request->file('image')->store('uploads');
+//            $newImg->doc = $t;
+//            $newImg->emp_id = $request->input('id');
+//            $newImg->save();
              return view('home');
         }
 
@@ -39,9 +52,12 @@ class ImgController extends Controller
     }
 
     public function binToImg(){
-        $img=Empimg::all();
-        $arr = array('img'=>$img);
-        return view('person.imgshow',$arr);
+        $img=Empimg::all('id','emp_id','name');
+        $data =[
+            'img' => $img
+        ];
+        return Response::json($img);
+//        return view('person.imgshow',$data);
 
     }
 }
