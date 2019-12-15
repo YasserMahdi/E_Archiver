@@ -21,6 +21,8 @@ class ProgramController extends Controller
                     $btn = '<a href="/programgetter/'.$row->id.'" class="edit btn btn-primary btn-sm">View</a>';
                     $btn.='&nbsp;&nbsp;&nbsp;';
                     $btn.='<a href="/uploadProgrampaper/?id='.$row->id.'" class="edit btn btn-secondary btn-sm">ADD</a>';
+                    //$btn.='&nbsp;&nbsp;&nbsp;';
+                    //$btn.='<a href="/DelProgramPaper/'.$row->id.'" class="edit btn btn-danger btn-sm">Delete</a>';
 
                     return $btn;
                 })
@@ -42,6 +44,8 @@ class ProgramController extends Controller
                 ->addColumn('action', function($row){
 
                     $btn = '<a href="/programpapershow/'.$row->id.'" class="edit btn btn-primary btn-sm" id="'.$row->id.'" > View</a>';
+                    $btn.='&nbsp;&nbsp;&nbsp;';
+                    //$btn.='<a href="/DelProgramPaper/'.$row->id.'" class="edit btn btn-danger btn-sm">Delete</a>';
 
                     return $btn;
                 })

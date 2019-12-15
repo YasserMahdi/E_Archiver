@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 6 Datatables Tutorial - ItSolutionStuff.com</title>
+    <title>Pserson</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
             <th>Name</th>
             <th>Title</th>
             <th>Unit</th>
-            <th width="100px">Action</th>
+            <th width="230px">Action</th>
         </tr>
         </thead>
         <tbody>

@@ -22,13 +22,14 @@
 @foreach($img as $i)
     <div class="img-container borderStyle">
         <button onclick="printImg()" class="btn btn-outline-success" style="float: left;margin: 15px;">Print</button>
-        <img class="img-fluid" src="data:image/jpeg;base64,{{base64_encode($i->doc)}}"   class="rounded" />
+        <!--<img class="img-fluid" src="data:image/jpeg;base64,{{base64_encode($i->doc)}}"   class="rounded" /> -->
+        <img class="img-fluid" src="{{ asset('storage/uploads/'.$i->doc .'') }}"   class="rounded" />
     </div>
 @endforeach
 <script>
     function printImg() {
         var win = window.open('');
-        win.document.write('<img src="' + "data:image/jpeg;base64,{{base64_encode($i->doc)}}" + '" onload="window.print();window.close()" />');
+        win.document.write('<img src="' + "{{ asset('storage/uploads/'.$i->doc .'') }}" + '" onload="window.print();window.close()" />');
         win.focus();
     }
 </script>

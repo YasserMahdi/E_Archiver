@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Empimg;
+use App\Programimg;
+use App\Unitimg;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Image;
@@ -52,10 +54,117 @@ class ImgController extends Controller
 //        return view('home');
 //    }
 
+
+public function imgSaver(Request $request){
+
+
+    if ($request->hasFile('image')) {
+
+
+        $name = $request->input('name');
+        $id = $request->input('id');
+        $realName =$request->file('image')->getClientOriginalName();
+        $image = $request->file('image')->storeAs('public/uploads',$realName);
+
+
+        $paper = $request->file('image');
+
+        $newImg=new Empimg();
+        $newImg->name=$name;
+        $newImg->doc=$realName;
+        $newImg->emp_id=$id;
+        $newImg->save();
+
+        return view('person.uploadEmpPaper');
+
+
+    }
+    else{
+        echo '<script>alert("الرجاء اختيار صورة");</script>';
+        return view('person.uploadEmpPaper');
+    }
+
+//    if ($request->hasFile('image')) {
+//        $image = $request->file('image');
+//        $name = $image->getClientOriginalName();
+//        $size = $image->getClientSize();
+//        $destinationPath = public_path('/images');
+//        $image->move($destinationPath, $name);
+//    }
+}
     public function binToImg($id){
         $img= DB::table('empimgs')->where('id',$id)->get();
         $arr = array('img'=>$img);
         return view('person.imgshow',$arr);
 
     }
+
+
+
+public function UnitimgSaver(Request $request){
+
+
+    if ($request->hasFile('image')) {
+
+
+        $name = $request->input('name');
+        $id = $request->input('id');
+        $realName =$request->file('image')->getClientOriginalName();
+        $image = $request->file('image')->storeAs('public/uploads',$realName);
+
+
+        $paper = $request->file('image');
+
+        $newImg=new Unitimg();
+        $newImg->name=$name;
+        $newImg->paper=$realName;
+        $newImg->unit_id=$id;
+        $newImg->save();
+
+        return view('units.uploadPaper');
+
+
+    }
+    else{
+        echo '<script>alert("الرجاء اختيار صورة");</script>';
+        return view('units.uploadPaper');
+    }
+
+}
+
+
+
+
+    public function ProgimgSaver(Request $request){
+
+
+        if ($request->hasFile('image')) {
+
+
+            $name = $request->input('name');
+            $id = $request->input('id');
+            $realName =$request->file('image')->getClientOriginalName();
+            $image = $request->file('image')->storeAs('public/uploads',$realName);
+
+
+            $paper = $request->file('image');
+
+            $newImg=new Programimg();
+            $newImg->name=$name;
+            $newImg->paper=$realName;
+            $newImg->program_id=$id;
+            $newImg->save();
+
+            return view('programs.uploadPaper');
+
+
+        }
+        else{
+            echo '<script>alert("الرجاء اختيار صورة");</script>';
+            return view('programs.uploadPaper');
+        }
+
+    }
+
+
 }

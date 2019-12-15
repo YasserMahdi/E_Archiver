@@ -22,7 +22,7 @@
                         <br><br><br>
 
                         <section style="margin-bottom: 50px">
-                            <form action="{{ url('/uploadunitpaper.php') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/uploadunitpaper') }}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="Name">Name</label>

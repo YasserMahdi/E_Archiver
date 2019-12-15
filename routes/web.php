@@ -11,6 +11,9 @@
 |
 */
 
+use App\Employee;
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -66,6 +69,7 @@ Route::get('/uploadProgrampaper',function(){
 
 
 Route::post('uploadimg', 'ImgController@uploadEmpImg'); //
+Route::post('uploadEmp','ImgController@imgSaver');
 Route::get('/imgshow/{id}', 'ImgController@binToImg');//
 Route::get('/unitpapershow/{id}', 'UnitController@binToImg'); //
 Route::get('/programpapershow/{id}', 'ProgramController@binToImg');
@@ -73,3 +77,46 @@ Route::get('/uploadfile','UploadFileController@index');
 Route::post('/uploadfile','UploadFileController@showUploadFile');
 
 Route::get('PaperGitter','UserController@imgGetter.PaperGitter');
+
+
+Route::Post('uploadunitpaper','ImgController@UnitimgSaver');
+Route::Post('uploadProgramPaper','ImgController@ProgimgSaver');
+
+
+
+//Route::get('empDel/{id}',function ($id){
+//    $data = DB::table('empimgs')->where('emp_id',$id)->delete();
+//    $data = DB::table('employees')->where('id',$id)->delete();
+//    return redirect('/personal');
+//});
+//
+//Route::get('empFileDel/{id}',function ($id){
+//    $data = DB::table('empimgs')->where('id',$id)->delete();
+//    return redirect('/imggetter/{id}');
+//});
+//
+//
+//
+//Route::get('DelUnit/{id}',function ($id){
+//    $data = DB::table('unitimgs')->where('unit_id',$id)->delete();
+//    $data = DB::table('units')->where('id',$id)->delete();
+//    return redirect('/units');
+//});
+//
+//Route::get('DelUnitPaper/{id}',function ($id){
+//    $data = DB::table('unitimgs')->where('id',$id)->delete();
+//    return redirect('/papergetter/{id}');
+//});
+//
+//
+//Route::get('DelProgramPaper/{id}',function ($id){
+//    $data = DB::table('empimgs')->where('emp_id',$id)->delete();
+//    $data = DB::table('employees')->where('id',$id)->delete();
+//    return redirect('/personal');
+//});
+//
+//Route::get('DelProgramPaper/{id}',function ($id){
+//    $data = DB::table('empimgs')->where('id',$id)->delete();
+//    return redirect('/imggetter/{id}');
+//});
+//
