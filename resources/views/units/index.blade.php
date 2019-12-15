@@ -13,7 +13,6 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
-
 <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px;">
         <a class="navbar-brand" href="/home" style="padding-left: 200px;"><<<</a>
@@ -30,8 +29,6 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Title</th>
-            <th>Unit</th>
             <th width="100px">Action</th>
         </tr>
         </thead>
@@ -48,12 +45,10 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('users.index') }}",
+            ajax: "{{ route('units.index') }}",
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},
-                {data: 'title', name: 'title'},
-                {data:'unit' , name : 'unit'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
         });
@@ -62,7 +57,7 @@
 </script>
 
 <div class="container" style="margin-bottom: 30px">
-    <button type="button" onclick="window.location.href='/newemp'"
+    <button type="button" onclick="window.location.href='/addUnit'"
             class="btn btn-outline-danger btn-lg btn-block"> اضافة </button>
 </div>
 </html>

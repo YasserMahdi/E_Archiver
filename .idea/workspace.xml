@@ -2,14 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fcf1b5c-7e31-47a0-957f-df3f9ad9e4e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploadProgramPaper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/uploadunitpaper.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/programs/add.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/programs/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/programs/paper.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/programs/program.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/programs/uploadPaper.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/units/addUnit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/units/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/units/paper.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/units/unit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/units/uploadPaper.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DisplayController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImgController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ImgController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/i.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UploadFileController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/personlController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmpController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/upload.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/upload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/person/imgshow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/person/imgshow.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/person/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/person/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/person/shower.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/person/shower.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/person/upload.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/person/uploadEmpPaper.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/person/uploadEmpPaper.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/uploadfile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,6 +160,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -185,7 +207,12 @@
       <workItem from="1575881527915" duration="38542000" />
       <workItem from="1576017589888" duration="41643000" />
       <workItem from="1576147706084" duration="10879000" />
-      <workItem from="1576245865258" duration="12484000" />
+      <workItem from="1576245865258" duration="13128000" />
+      <workItem from="1576309657340" duration="1502000" />
+      <workItem from="1576332691848" duration="269000" />
+      <workItem from="1576332975764" duration="3512000" />
+      <workItem from="1576350517809" duration="10347000" />
+      <workItem from="1576395177449" duration="9785000" />
     </task>
     <servers />
   </component>

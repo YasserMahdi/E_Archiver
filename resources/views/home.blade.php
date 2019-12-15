@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header"><span> الرئيسية</span></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <span> الرئيسية</span>
+
                         <br><br><br>
 
                     <section style="margin-bottom: 50px">
@@ -23,11 +23,11 @@
                                     class="btn btn-outline-danger btn-lg btn-block"> الاضابير الشخصية</button>
                         </div>
                         <div class="container">
-                            <button type="button" onclick="window.location.href='/page2'"
+                            <button type="button" onclick="window.location.href='/units'"
                                     class="btn btn-outline-danger btn-lg btn-block">اضابير الواحدت</button>
                         </div>
                         <div class="container">
-                            <button type="button" onclick="window.location.href='/page2'"
+                            <button type="button" onclick="window.location.href='/prog'"
                                     class="btn btn-outline-danger btn-lg btn-block">اضابير البرامج</button>
                         </div>
                     </section>

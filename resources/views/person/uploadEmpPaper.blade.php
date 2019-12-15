@@ -5,7 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">رفع وثيقة جديدة</div>
+                    <div class="card-header">
+                        <span>رفع وثيقة جديدة</span>
+                        <button type="button" onclick="window.location.href='/personal'"
+                                class="btn btn-outline-danger" style="float: right"> عودة لقائمة الاضابير </button>
+                    </div>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -18,19 +22,21 @@
                         <br><br><br>
 
                         <section style="margin-bottom: 50px">
-                            <form action="{{ url('/uploadimg') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ url('/upload.php') }}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                Title:
-                                <br />
-                                <input type="text" name="name" class="form-control" />
-                                <br /><br />
-                                Employee ID:
-                                <input type="text" name="id"  class="form-control" />
+                                    <div class="form-group">
+                                        <label for="Name">Name</label>
+                                        <input type="text" class="form-control" placeholder="Name" id="name"  name="name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="empid">ID</label>
+                                        <input type="text" class="form-control" placeholder="Employeer ID" id="id" value="<?php if (isset($_GET['id'])) {echo $_GET['id'];}?>" name="id">
+                                    </div>
 
-                                <br />
-                                <input type="file" name="image" />
-                                <br /><br />
-                                <input type="submit" value=" Save " class="btn btn-primary" />
+                                    <input type="file" name="image" id="image" class="form-control-file" />
+                                    <br /><br />
+
+                                    <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-primary" />
                             </form>
 
                         </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel 6 Datatables Tutorial - ItSolutionStuff.com</title>
+    <title>اضابير البرامج</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
@@ -13,7 +13,6 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
-
 <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px;">
         <a class="navbar-brand" href="/home" style="padding-left: 200px;"><<<</a>
@@ -23,6 +22,7 @@
     </nav>
 </div>
 
+
 <div class="container">
 
     <table class="table table-bordered data-table">
@@ -30,8 +30,7 @@
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Title</th>
-            <th>Unit</th>
+
             <th width="100px">Action</th>
         </tr>
         </thead>
@@ -48,12 +47,10 @@
         var table = $('.data-table').DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('users.index') }}",
+            ajax: "{{ route('prog.index') }}",
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},
-                {data: 'title', name: 'title'},
-                {data:'unit' , name : 'unit'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
         });
@@ -62,7 +59,7 @@
 </script>
 
 <div class="container" style="margin-bottom: 30px">
-    <button type="button" onclick="window.location.href='/newemp'"
+    <button type="button" onclick="window.location.href='/newprog'"
             class="btn btn-outline-danger btn-lg btn-block"> اضافة </button>
 </div>
 </html>

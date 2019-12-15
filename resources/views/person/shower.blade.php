@@ -13,8 +13,17 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px;">
+        <a class="navbar-brand" href="/personal" style="padding-left: 200px;"><<<</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</div>
+
 <div class="container">
-    <h1>Laravel 6 Datatables Tutorial <br/> HDTuto.com</h1>
+
         <table class="table table-bordered data-table">
         <thead>
         <tr>
@@ -34,10 +43,7 @@
 
 <script type="text/javascript">
     console.log("/imggetter/" + window.location.pathname.split('/')[2]);
-    function reply_click(clicked_id)
-    {
-        alert(clicked_id);
-    } ;
+
     $(function () {
 
         var table = $('.data-table').DataTable({
@@ -56,9 +62,6 @@
     });
 </script>
 
-<div class="container" style="margin-bottom: 30px">
-    <button type="button" onclick="window.location.href='/upload'"
-            class="btn btn-outline-danger btn-lg btn-block"> رفع وثيقة </button>
 </div>
 
 </html>

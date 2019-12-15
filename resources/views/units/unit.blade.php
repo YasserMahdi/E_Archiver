@@ -13,10 +13,9 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
-
 <div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px;">
-        <a class="navbar-brand" href="/home" style="padding-left: 200px;"><<<</a>
+        <a class="navbar-brand" href="/units" style="padding-left: 200px;"><<<</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,13 +24,13 @@
 
 <div class="container">
 
+
     <table class="table table-bordered data-table">
         <thead>
         <tr>
             <th>No</th>
             <th>Name</th>
-            <th>Title</th>
-            <th>Unit</th>
+
             <th width="100px">Action</th>
         </tr>
         </thead>
@@ -40,20 +39,23 @@
     </table>
 </div>
 
+
 </body>
 
 <script type="text/javascript">
+    //console.log("/imggetter/" + window.location.pathname.split('/')[2]);
+
     $(function () {
 
         var table = $('.data-table').DataTable({
+
             processing: true,
             serverSide: true,
-            ajax: "{{ route('users.index') }}",
+            ajax: "/papergetter/" + window.location.pathname.split('/')[2],
+
             columns: [
-                {data: 'id', name: 'id'},
+                {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                 {data: 'name', name: 'name'},
-                {data: 'title', name: 'title'},
-                {data:'unit' , name : 'unit'},
                 {data: 'action', name: 'action', orderable: false, searchable: false},
             ]
         });
@@ -61,8 +63,6 @@
     });
 </script>
 
-<div class="container" style="margin-bottom: 30px">
-    <button type="button" onclick="window.location.href='/newemp'"
-            class="btn btn-outline-danger btn-lg btn-block"> اضافة </button>
 </div>
+
 </html>

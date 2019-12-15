@@ -4,24 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Empimg;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Image;
 use Illuminate\Support\Facades\Response;
 
 class ImgController extends Controller
 {
-    public function uploadEmpImg(Request $request)
-    {
-        if($request->isMethod('post'))
-        {
-            $data = new Empimg();
-
-            $url = $request["image"]->store("public");
-            $data["doc"] = str_replace("public", "/storage", $url);
-
-            $data["name"] = $request["name"];
-            $data["emp_id"] = $request["id"];
-
-            $data->save();
+//    public function uploadEmpImg(Request $request)
+//    {
+//        if($request->isMethod('post'))
+//        {
+//            $data = new Empimg();
+//
+//            $url = $request["image"]->store("public");
+//            $data["doc"] = str_replace("public", "/storage", $url);
+//
+//            $data["name"] = $request["name"];
+//            $data["emp_id"] = $request["id"];
+//
+//            $data->save();
 
 
 
@@ -45,19 +46,16 @@ class ImgController extends Controller
 //            $newImg->doc = $t;
 //            $newImg->emp_id = $request->input('id');
 //            $newImg->save();
-             return view('home');
-        }
+//             return view('home');
+//        }
+//
+//        return view('home');
+//    }
 
-        return view('home');
-    }
-
-    public function binToImg(){
-        $img=Empimg::all('id','emp_id','name');
-        $data =[
-            'img' => $img
-        ];
-        return Response::json($img);
-//        return view('person.imgshow',$data);
+    public function binToImg($id){
+        $img= DB::table('empimgs')->where('id',$id)->get();
+        $arr = array('img'=>$img);
+        return view('person.imgshow',$arr);
 
     }
 }

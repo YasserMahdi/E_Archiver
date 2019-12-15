@@ -5,10 +5,10 @@ if(isset($_POST["insert"]))
     $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
     $name = $_POST["name"];
     $id = $_POST["id"];
-    $query = "INSERT INTO empimgs (name,doc,emp_id) VALUES ('$name','$file','$id')";
+    $query = "INSERT INTO unitimgs (name,paper,unit_id) VALUES ('$name','$file','$id')";
     if(mysqli_query($connect, $query))
     {
-        header("Location: http://127.0.0.1:8000/upload/?id=$id");
+        header("Location: http://127.0.0.1:8000/uploadunitpaper/?id=$id");
     }
     else{
         echo '<script>alert("Image Dose not Inserted into Database")</script>';
